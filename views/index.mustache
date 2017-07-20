@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Planets</title>
+  </head>
+  <body>
+
+    <header>
+      <h2>Planets Collection</h2><br>
+      <nav>
+        <span><a href="/:add">Add</a></span>
+        <span><a href="/:edit">Edit</a></span>
+        <span><a href="/:destroy">Delete</a></span>
+      </nav>
+    </header>
+
+<!-- {{#add}} -->
+{{#err}}
+<h2>{{.}}</h2>
+{{/err}}
+{{^err}}
+    <div class="add-form">
+      <form class="" action="/" method="post">
+          <legend>Create a new planet</legend>
+
+          <label for="name">Planet Name</label><br>
+          <input type="text" name="name"><br>
+
+          <label for="inhabitable">Inhabitable?</label><br>
+          <input type="radio" name="inhabitable" value="true" checked> Yes<br>
+          <input type="radio" name="inhabitable" value="false"> No<br>
+
+          <label for="diameter">Diameter (km)</label><br>
+          <input type="number" name="diameter">
+
+          <button type="submit" name="submitbutton">Submit</button>
+          <input type="reset">
+      </form>
+    </div>
+{{/err}}
+<!-- {{/add}} -->
+
+{{#edit}}
+    <div class="edit-form">
+      <form class="" action="index.html" method="post">
+        <legend>Change the planet</legend>
+      </form>
+    </div>
+{{/edit}}
+
+{{#delete}}
+    <div class="delete-form">
+      <form class="" action="index.html" method="post">
+        <legend>Delete a Planet</legend>
+        <label for="delete">What planet do you want to delete?</label>
+        <input type="text" name="delete">
+        <button type="submit" name="button">Delete</button>
+      </form>
+    </div>
+{{/delete}}
+
+  </body>
+</html>
